@@ -1,10 +1,11 @@
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { setTheme } from './redux/slices/theme'
+import { store } from './redux/store';
 
 function App() {
   const dispatch = useDispatch();
-  const theme = useSelector(state => state.theme);
+  const theme = useSelector((state: ReturnType<typeof store.getState>) => state.theme);
 
   return (
     <main className='main-container'>
